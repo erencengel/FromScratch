@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="firstSuit" verbose="1">
+    <test name="firstSuitTest">
+        <packages>
+            <package name="com.scalefocus.day1"></package>
+            <package name="com.scalefocus.day2"></package>
+        </packages>
+    </test>
+</suite>
