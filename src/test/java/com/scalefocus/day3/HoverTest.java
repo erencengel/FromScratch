@@ -2,6 +2,7 @@ package com.scalefocus.day3;
 
 import com.scalefocus.TestBase;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -38,9 +39,12 @@ public class HoverTest extends TestBase {
         driver.findElement(By.cssSelector("button#onetrust-accept-btn-handler")).click();
         List<WebElement> elements = driver.findElements(By.cssSelector("div#draggable"));
         WebElement drag = elements.get(0);
-        List<WebElement> elements1 = driver.findElements(By.xpath(".k-header"));
+        List<WebElement> elements1 = driver.findElements(By.cssSelector("div#droptarget"));
         WebElement droptarget = elements1.get(0);
+        javascriptExecutor = (JavascriptExecutor) driver;
+        javascriptExecutor.executeScript("window.scrollBy(0,250)");
         actions = new Actions(driver);
+        //actions.clickAndHold(drag).moveToElement(droptarget).pause(3000).release().perform();
         actions.dragAndDrop(drag,droptarget).perform();
         try{
             Thread.sleep(5000);

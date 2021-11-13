@@ -1,6 +1,7 @@
 package com.scalefocus;
 
 import com.utilities.WebDriverInstance;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -14,6 +15,7 @@ public class TestBase {
     protected WebDriver driver;
     protected WebDriverWait webDriverWait;
     protected Actions actions;
+    protected JavascriptExecutor javascriptExecutor;
 
     @BeforeMethod
     public void setUp(){
@@ -25,7 +27,7 @@ public class TestBase {
 
     @AfterMethod
     public void tearDown(){
-        //driver.quit();
+        driver.quit();
     }
 
 }
