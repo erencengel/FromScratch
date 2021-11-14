@@ -38,4 +38,13 @@ public class Jse extends TestBase {
         Thread.sleep(5000);
     }
 
+    @Test
+    public void test3(){
+        driver.get("http://practice.cybertekschool.com/infinite_scroll");
+        javascriptExecutor = (JavascriptExecutor) driver;
+       // while (true){
+         //   javascriptExecutor.executeScript("window.scrollBy(0,250)");
+        //}
+    }
+
 }
